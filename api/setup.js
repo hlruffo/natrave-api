@@ -5,11 +5,7 @@ import { router } from './router.js'
 
 export const app = new Koa()
 
-app.use(cors({
-    allowMethods:["GET","OPTIONS","PATCH","DELETE","POST","PUT"],
-    origin: 'https://natrave-web-two-livid.vercel.app/', // front end origin
-    credentials: true // Allow cross domain band cookie
-})) 
+app.use(cors())
 app.use(bodyParser())
 app.use(router.routes())
 app.use(router.allowedMethods());
