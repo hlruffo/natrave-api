@@ -12,9 +12,7 @@ export const create = async (ctx) => {
     try {
         const data = jwt.verify(token, process.env.JWT_SECRET)
 
-
-
-        if (!ctx.request.body.homeTeamScore && !ctx.request.body.awwayTeamScore) {
+        if (!ctx.request.body.homeTeamScore && !ctx.request.body.awayTeamScore) {
             ctx.status = 400
             return
         }
